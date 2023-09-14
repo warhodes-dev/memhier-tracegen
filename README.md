@@ -2,7 +2,7 @@
 
 ## Building
 
-run `cargo build --release`. The executable will be located here: `./target/release/tracegen`
+run `cargo build --release` in the project directory. The executable will be located here: `./target/release/tracegen`
 
 ## Usage
 
