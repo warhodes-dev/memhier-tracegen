@@ -9,12 +9,20 @@ use config::{AddressType, Config};
 #[derive(Debug, Parser)]
 struct Args {
 
+    /// Number of total addresses generated
     num_traces: u32,
+
+    /// Number of unique addresses that should be generated. Larger numbers generate more cache misses
     num_addrs: Option<u32>,
+
     #[clap(short, long = "config")]
     config_path: Option<String>,
+
+    /// Ratio of reads to writes. i.e. -rrrw will produce a trace with 75% reads and 25% writes
     #[clap(short, action = clap::ArgAction::Count)]
     r_cnt: u8,
+
+    /// Ratio of reads to writes. i.e. -wwr produce a trace with 33% reads and 66% writes
     #[clap(short, action = clap::ArgAction::Count)]
     w_cnt: u8,
 }
